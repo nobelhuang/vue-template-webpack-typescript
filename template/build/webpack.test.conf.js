@@ -9,6 +9,7 @@ var webpackConfig = merge(baseConfig, {
     rules: [
       {
         test: /\.ts$/,
+        enforce: "pre",
         loader: 'istanbul-instrumenter',
         include: path.resolve('src/')
       },
