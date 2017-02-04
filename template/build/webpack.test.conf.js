@@ -1,24 +1,24 @@
-var path = require('path')
-var config = require('../config/test.env.js')
+var utils = require('./utils')
 var webpack = require('webpack')
 var merge = require('webpack-merge')
-var baseWebpackConfig = require('./webpack.base.conf')
+var baseConfig = require('./webpack.base.conf')
 
-module.exports = merge(baseWebpackConfig, {
-  entry: {},
+var webpackConfig = merge(baseConfig, {
+  // use inline sourcemap for karma-sourcemap-loader
   module: {
-    postLoaders: [
+    rules: [
       {
         test: /\.ts$/,
         loader: 'istanbul-instrumenter',
         include: path.resolve('src/')
-      }
+      },
+      utils.styleLoaders()
     ]
   },
   devtool: '#inline-source-map',
   plugins: [
     new webpack.DefinePlugin({
-      'process.env': config
+      'process.env': require('../config/test.env')
     })
   ],
   ts: {
@@ -28,3 +28,9 @@ module.exports = merge(baseWebpackConfig, {
     }
   }
 })
+
+// no need for app entry during tests
+delete webpackConfig.entry
+
+module.exports = webpackConfig
+
