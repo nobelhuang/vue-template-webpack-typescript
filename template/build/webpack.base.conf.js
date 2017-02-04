@@ -42,12 +42,8 @@ module.exports = {
       },
       {
         test: /\.ts$/,
-        loader: 'ts',
-        include: [resolve('src'), resolve('test')]
-      },
-      {
-        test: /\.json$/,
-        loader: 'json-loader'
+        loader: 'ts-loader',
+        options: {appendTsSuffixTo: [/\.vue$/]}
       },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
