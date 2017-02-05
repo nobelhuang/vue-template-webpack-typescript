@@ -10,8 +10,14 @@ var webpackConfig = merge(baseConfig, {
       {
         test: /\.ts$/,
         enforce: "pre",
-        loader: 'istanbul-instrumenter',
+        loader: 'istanbul-instrumenter-loader',
         include: path.resolve('src/')
+        options: {
+          compilerOptions: {
+            sourceMap: false,
+            inlineSourceMap: true
+          }
+        }
       },
       utils.styleLoaders()
     ]
@@ -21,13 +27,7 @@ var webpackConfig = merge(baseConfig, {
     new webpack.DefinePlugin({
       'process.env': require('../config/test.env')
     })
-  ],
-  ts: {
-    compilerOptions: {
-      sourceMap: false,
-      inlineSourceMap: true
-    }
-  }
+  ]
 })
 
 // no need for app entry during tests
