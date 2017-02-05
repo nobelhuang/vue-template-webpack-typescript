@@ -33,8 +33,7 @@ exports.cssLoaders = function (options) {
         fallback: 'vue-style-loader'
       })
     } else {
-      sourceLoader.push('vue-style-loader')
-      return sourceLoader
+      return ['vue-style-loader', ...sourceLoader]
     }
   }
 
