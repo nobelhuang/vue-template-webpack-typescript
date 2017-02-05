@@ -15,6 +15,6 @@ export default {
 } as Vue.ComponentOptions<Vue>;
 </script>
 
-<style lang="scss">
-@import "./scss/_all.scss";
+<style>
 </style>
+
