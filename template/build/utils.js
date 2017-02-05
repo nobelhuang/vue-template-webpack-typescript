@@ -23,14 +23,17 @@ exports.cssLoaders = function (options) {
         extraParamChar = '?'
       }
       return loader + (options.sourceMap ? extraParamChar + 'sourceMap' : '')
-    }).join('!')
+    })
 
     // Extract CSS when that option is specified
     // (which is the case during production build)
     if (options.extract) {
-      return ExtractTextPlugin.extract('vue-style-loader', sourceLoader)
+      return ExtractTextPlugin.extract({
+        loader: sourceLoader,
+        fallback: 'vue-style-loader'
+      })
     } else {
-      return ['vue-style-loader', sourceLoader].join('!')
+      return ['vue-style-loader', ...sourceLoader]
     }
   }
 
@@ -54,7 +57,7 @@ exports.styleLoaders = function (options) {
     var loader = loaders[extension]
     output.push({
       test: new RegExp('\\.' + extension + '$'),
-      loader: loader
+      use: loader
     })
   }
   return output
