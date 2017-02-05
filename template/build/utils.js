@@ -49,14 +49,6 @@ exports.cssLoaders = function (options) {
   }
 }
 
-exports.cssLoadersForVueLoader = function (options) {
-  var loaders = exports.cssLoaders(options)
-  for (var extension in loaders) {
-    loaders[extension] = loaders[extension].join('!')
-  }
-  return loaders
-}
-
 // Generate loaders for standalone style files (outside of .vue)
 exports.styleLoaders = function (options) {
   var output = []
