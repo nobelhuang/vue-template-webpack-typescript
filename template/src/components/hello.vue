@@ -20,7 +20,7 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import Vue = require("vue");
 
 interface Hello extends Vue {
