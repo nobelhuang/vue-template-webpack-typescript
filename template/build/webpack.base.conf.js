@@ -20,17 +20,11 @@ module.exports = {
   },
   resolve: {
     extensions: ['.js', '.ts', '.vue', '.json'],
-    modules: [
-      resolve('src'),
-      resolve('node_modules')
-    ],
     alias: {
       {{#if_eq build "standalone"}}
-      'vue$': 'vue/dist/vue.common.js',
+      'vue$': 'vue/dist/vue.esm.js',
       {{/if_eq}}
-      'src': resolve('src'),
-      'assets': resolve('src/assets'),
-      'components': resolve('src/components')
+      '@': resolve('src'),
     }
   },
   module: {

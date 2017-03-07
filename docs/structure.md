@@ -4,7 +4,7 @@
 .
 ├── build/                      # webpack config files
 │   └── ...
-├── config/                     
+├── config/
 │   ├── index.js                # main project config
 │   └── ...
 ├── src/
