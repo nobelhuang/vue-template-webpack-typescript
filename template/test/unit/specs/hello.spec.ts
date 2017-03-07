@@ -1,7 +1,7 @@
 import { expect } from "chai";
 
-import Vue = require("vue");
-import Hello = require("src/components/hello");
+import Vue from "vue";
+import Hello from "@/components/hello";
 
 describe("Hello.vue", () => {
   it("should render correct contents", () => {
