@@ -2,12 +2,12 @@
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 {{/if_eq}}
-import Vue = require("vue");
+import Vue from "vue";
 {{#router}}
 import router from "./router";
 {{/router}}
 
-import App = require("./app");
+import App from "./app";
 
 new Vue({
   el: "#app",

@@ -8,7 +8,7 @@
 </template>
 
 <script lang="ts">
-import Vue = require("vue");
+import Vue from "vue";
 
 export default {
   name: "app",

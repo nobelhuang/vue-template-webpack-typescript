@@ -1,9 +1,9 @@
-import Vue = require('vue');
-import Router = require('vue-router');
+import Vue from "vue";
+import Router from "vue-router";
 
 Vue.use(Router);
 
-import Hello = require('components/hello');
+import Hello from "src/components/hello";
 
 export default new Router({
   routes: [
