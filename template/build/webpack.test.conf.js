@@ -19,7 +19,7 @@ var webpackConfig = merge(baseConfig, {
           }
         }
       },
-      utils.styleLoaders()
+      ...utils.styleLoaders()
     ]
   },
   devtool: '#inline-source-map',
