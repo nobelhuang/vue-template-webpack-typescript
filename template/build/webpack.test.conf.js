@@ -1,3 +1,4 @@
+var path = require('path')
 var utils = require('./utils')
 var webpack = require('webpack')
 var merge = require('webpack-merge')
@@ -11,7 +12,7 @@ var webpackConfig = merge(baseConfig, {
         test: /\.ts$/,
         enforce: "pre",
         loader: 'istanbul-instrumenter-loader',
-        include: path.resolve('src/')
+        include: path.resolve('src/'),
         options: {
           compilerOptions: {
             sourceMap: false,
