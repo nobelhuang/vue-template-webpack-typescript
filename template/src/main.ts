@@ -7,7 +7,7 @@ import Vue from "vue";
 import router from "./router";
 {{/router}}
 
-import App from "./app";
+import App from "./app.vue";
 
 new Vue({
   el: "#app",
