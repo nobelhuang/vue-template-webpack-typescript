@@ -3,14 +3,14 @@ import Router from "vue-router";
 
 Vue.use(Router);
 
-import Hello from "@/components/hello";
+import HelloWorld from "@/components/HelloWorld.vue";
 
 export default new Router({
   routes: [
     {
-      path: '/',
-      name: 'Hello',
-      component: Hello,
+      path: "/",
+      name: "HelloWorld",
+      component: HelloWorld,
     },
   ],
 });
