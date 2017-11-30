@@ -17,9 +17,9 @@ exports.assertion = function (selector, count) {
     return res.value;
   }
   this.command = function (cb) {
-    var self = this{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+    var self = this;
     return this.api.execute(function (selectorToCount) {
-      return document.querySelectorAll(selectorToCount).length{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+      return document.querySelectorAll(selectorToCount).length;
     }, [selector], function (res) {
       cb.call(self, res);
     });

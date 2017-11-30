@@ -10,17 +10,17 @@
 </template>
 
 <script>
-import Vue from "vue"{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+import Vue from "vue";
 
 {{#unless router}}
-import HelloWorld from './components/HelloWorld'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+import HelloWorld from "./components/HelloWorld";
 {{/unless}}
 export default Vue.extend({
-  name: "app"{{#router}}{{#if_eq lintConfig "airbnb"}},{{/if_eq}}{{else}},
+  name: "app"{{#router}}{{else}},
   components: {
-    HelloWorld{{#if_eq lintConfig "airbnb"}},{{/if_eq}}
-  }{{#if_eq lintConfig "airbnb"}},{{/if_eq}}{{/router}}
-}){{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+    HelloWorld,
+  },{{/router}}
+});
 </script>
 
 <style>
