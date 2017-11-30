@@ -5,7 +5,7 @@
     <ul>
       <li><a href="https://vuejs.org" target="_blank">Core Docs</a></li>
       <li><a href="https://forum.vuejs.org" target="_blank">Forum</a></li>
-      <li><a href="https://gitter.im/vuejs/vue" target="_blank">Gitter Chat</a></li>
+      <li><a href="https://chat.vuejs.org" target="_blank">Community Chat</a></li>
       <li><a href="https://twitter.com/vuejs" target="_blank">Twitter</a></li>
       <br>
       <li><a href="http://vuejs-templates.github.io/webpack/" target="_blank">Docs for This Template</a></li>
@@ -20,21 +20,17 @@
   </div>
 </template>
 
-<script lang="ts">
+<script>
 import Vue from "vue";
 
-interface Hello extends Vue {
-  msg: string;
-}
-
-export default {
-  name: "hello",
-  data () {
+export default Vue.extend({
+  name: "HelloWorld",
+  data{{#unless_eq lintConfig "airbnb"}} {{/unless_eq}}() {
     return {
-      msg: "Welcome to Your Vue.js App",
-    };
-  },
-} as Vue.ComponentOptions<Hello>;
+      msg: "Welcome to Your Vue.js App"{{#if_eq lintConfig "airbnb"}},{{/if_eq}}
+    }{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+  }{{#if_eq lintConfig "airbnb"}},{{/if_eq}}
+}){{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
@@ -42,17 +38,14 @@ export default {
 h1, h2 {
   font-weight: normal;
 }
-
 ul {
   list-style-type: none;
   padding: 0;
 }
-
 li {
   display: inline-block;
   margin: 0 10px;
 }
-
 a {
   color: #42b983;
 }

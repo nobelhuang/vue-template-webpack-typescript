@@ -19,15 +19,13 @@ All build commands are executed via [NPM Scripts](https://docs.npmjs.com/misc/sc
 - HTML minified with [html-minifier](https://github.com/kangax/html-minifier).
 - CSS across all components extracted into a single file and minified with [cssnano](https://github.com/ben-eb/cssnano).
 - All static assets compiled with version hashes for efficient long-term caching, and a production `index.html` is auto-generated with proper URLs to these generated assets.
-- Also see [deployment notes](#how-do-i-deploy-built-assets-with-my-backend-framework).
 
 ### `npm run unit`
 
-> Run unit tests in PhantomJS with [Karma](https://karma-runner.github.io/). See [Unit Testing](unit.md) for more details.
+> Run unit tests in JSDOM with [Jest](https://facebook.github.io/jest/docs/getting-started.html). See [Unit Testing](unit.md) for more details.
 
 - Supports ES2015+ in test files.
-- Supports all webpack loaders.
-- Easy [mock injection](http://vuejs.github.io/vue-loader/en/workflow/testing-with-mocks.html).
+- Easy [mocking](https://facebook.github.io/jest/docs/mock-functions.html).
 
 ### `npm run e2e`
 
