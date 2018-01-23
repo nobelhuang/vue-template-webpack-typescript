@@ -1,8 +1,6 @@
-import Vue from 'vue'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
-Vue.config.productionTip = false{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+import Vue from 'vue';
 
-// Polyfill fn.bind() for PhantomJS
-Function.prototype.bind = require('function-bind');
+Vue.config.productionTip = false;
 
 // require all test files (files that ends with .spec.js)
 const testsContext = require.context('./specs', true, /\.spec$/);
